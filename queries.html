@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>		
+<link REL="SHORTCUT ICON" HREF="./images/toplogo.png">	
+<title>Queries</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_700.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+</head>
+
+<body id="page2">
+	<div class="body1">
+	<div class="body2">
+	<div class="body5">
+		<div class="main zerogrid">
+<!-- header -->
+			<header>
+				<div class="wrapper rơw">
+				<h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+				<nav>
+					<ul id="menu">
+						<li id="nav1"><a href="index.html">Home<span>Welcome!</span></a></li>
+						<li id="nav2" ><a href="queries.html">Queries<span>NoSql</span></a></li>
+						<li id="nav3"><a href="about.html">About<span>Us</span></a></li>
+						<li id="nav4"><a href="powered.html">Powered<span>by</span></a></li>
+					</ul>
+				</nav>
+				</div>
+			</header>
+<!-- header end-->
+		</div>
+	</div>
+	</div>
+	</div>
+	<div class="body3">
+		<div class="main zerogrid">
+<!-- google content -->
+<section class="col-3-4">
+	<div class="wrap-col">
+							<div class="wrapper">
+								<figure class="left marg_right1"></figure>
+								<p class="pad_bot1"><br><br>
+									
+
+<h1> 1] Query : Top 10 Bars based on ratings and review count and checkins
+</h1><br>
+
+SELECT get_json_object(business.json,'$.name'), substr(get_json_object(business.json,'$.full_address'), length(get_json_object(business.json,'$.full_address'))-4), CAST(get_json_object(business.json,'$.review_count') as INT) as review_count, get_json_object(business.json,'$.stars') as stars
+FROM business
+where array_contains(Array(get_json_object(business.json,'$.categories[1]'),
+                           get_json_object(business.json,'$.categories[0]'),
+                           get_json_object(business.json,'$.categories[2]'),
+                           get_json_object(business.json,'$.categories[3]')
+                           ),'Restaurants')=false
+and array_contains(Array(get_json_object(business.json,'$.categories[1]'),
+                           get_json_object(business.json,'$.categories[0]'),
+                           get_json_object(business.json,'$.categories[2]'),
+                           get_json_object(business.json,'$.categories[3]')
+                           ),'Bars')=true
+ order by stars desc ,review_count desc
+ limit 10
+ 
+<br><br>
+<h1>2]
+
+Query : Top 10 Bars based on ratings and review count and checkins
+</h1><br>
+SELECT get_json_object(business.json,'$.name'), substr(get_json_object(business.json,'$.full_address'), length(get_json_object(business.json,'$.full_address'))-4), CAST(get_json_object(business.json,'$.review_count') as INT) as review_count, get_json_object(business.json,'$.stars') as stars
+FROM business
+where array_contains(Array(get_json_object(business.json,'$.categories[1]'),
+                           get_json_object(business.json,'$.categories[0]'),
+                           get_json_object(business.json,'$.categories[2]'),
+                           get_json_object(business.json,'$.categories[3]')
+                           ),'Restaurants')=false
+and array_contains(Array(get_json_object(business.json,'$.categories[1]'),
+                           get_json_object(business.json,'$.categories[0]'),
+                           get_json_object(business.json,'$.categories[2]'),
+                           get_json_object(business.json,'$.categories[3]')
+                           ),'Bars')=true
+ order by stars desc ,review_count desc
+ limit 10
+<br>
+<br>
+<h1>
+
+3]
+
+Query : People Analysis
+</h1><br>
+
+select * from business
+where  Cast(get_json_object(business.json,'$.stars') as float) between 1 and 2
+and Cast(get_json_object(business.json,'$.review_count') as INT) > 50
+
+
+select * from reviews
+where get_json_object(reviews.json,'$.business_id')='hCS5eV0SCAY9LeeL36lz8g'
+
+select count(1)
+from users join (select get_json_object(reviews.json,'$.user_id') as user_id 
+from reviews
+where get_json_object(reviews.json,'$.business_id')='bA-Cj6N9TEMlDlOh2aAnUw') review
+on( get_json_object(users.json ,'$.user_id')=review.user_id)
+where CAST(get_json_object(users.json ,'$.average_stars')as Float) between 0 and 5
+
+select count(1),get_json_object(reviews.json,'$.business_id')
+from reviews join (select get_json_object(users.json,'$.user_id') as user_id
+from users
+where CAST(get_json_object(users.json ,'$.average_stars')as Float) between 0 and 2) users
+on(get_json_object(reviews.json,'$.user_id')= users.user_id)
+group by get_json_object(reviews.json,'$.business_id');
+
+
+select count(1) as counts,get_json_object(reviews.json,'$.business_id')
+from reviews join (select get_json_object(users.json,'$.user_id') as user_id
+                   from users
+                   where CAST(get_json_object(users.json ,'$.average_stars')as Float) between 0 and 2) users
+on(get_json_object(reviews.json,'$.user_id')= users.user_id)
+group by get_json_object(reviews.json,'$.business_id')
+order by counts desc
+
+<br><br>
+<h1>
+
+4]
+
+Query : No of Users with respect to their avg ratings
+</h1><br>
+select count(1)
+from users
+where CAST(get_json_object(users.json ,'$.average_stars')as Float) 
+between 4.01 and 5
+<br>
+<br>
+<h1>
+5]
+
+Query : Hanny Bar good Reviews
+</h1><br>
+SELECT get_json_object(reviews.json,'$.text') as review_text
+FROM reviews
+WHERE get_json_object(reviews.json,'$.business_id')="6imLt53br7SJ3av07jjH7w" AND
+get_json_object(reviews.json,'$.stars')> 3
+
+<br><br>
+<h1>
+6]
+
+Query : Fake Reviewers List </h1><br>
+select avg(CAST(get_json_object(reviews.json,'$.stars') AS INT )) as avrg, get_json_object(reviews.json,'$.user_id')
+from
+reviews
+JOIN
+(                                     
+select get_json_object(users.json,'$.user_id') as user1_id ,CAST(get_json_object(users.json,'$.review_count')as INT) as review_count
+from users
+order by review_count desc
+limit 20) fake_reviewers
+ON
+(get_json_object(reviews.json,'$.user_id') = fake_reviewers.user1_id)
+group by get_json_object(reviews.json,'$.user_id')
+having avrg >=4.0
+order by avrg desc
+<br>
+<br>
+<h1>
+7]
+
+Query : Average Review Count for a user
+</h1><br>
+select avg(get_json_object(users.json,'$.review_count')) from users
+
+<br><br>
+<h1>
+8]
+
+Query : Hanny Bar bad reviews
+</h1><br>
+SELECT get_json_object(reviews.json,'$.text') as review_text
+FROM reviews
+WHERE get_json_object(reviews.json,'$.business_id')="6imLt53br7SJ3av07jjH7w" AND
+get_json_object(reviews.json,'$.stars')< 3;
+
+<br><br>
+<h1>
+9]
+
+Query : Burger King Branches
+</h1><br>
+select get_json_object(business.json,'$.full_address') as address,checkin_info.total_checkin
+from business join checkin_info on (get_json_object(business.json,'$.business_id')=checkin_info.business_id)
+where get_json_object(business.json,'$.name')="Burger King"
+order by checkin_info.total_checkin desc
+limit 10
+
+<br><br>
+<h1>
+10]
+
+Query : McDonalds Branches
+</h1><br>
+select get_json_object(business.json,'$.full_address') as address,checkin_info.total_checkin
+from business join checkin_info on (get_json_object(business.json,'$.business_id')=checkin_info.business_id)
+where get_json_object(business.json,'$.name')="McDonalds"
+order by checkin_info.total_checkin desc
+limit 10
+<br>
+<br>
+<h1>
+11]
+
+Query : Subway Branches
+</h1><br>
+select get_json_object(business.json,'$.full_address') as address,checkin_info.total_checkin
+from business join checkin_info on (get_json_object(business.json,'$.business_id')=checkin_info.business_id)
+where get_json_object(business.json,'$.name')="Subway"
+order by checkin_info.total_checkin desc
+limit 10
+<br>
+<br>
+<h1>
+12]
+
+Query : Starbucks Branches
+</h1><br>
+select get_json_object(business.json,'$.full_address') as address,checkin_info.total_checkin
+from business join checkin_info on (get_json_object(business.json,'$.business_id')=checkin_info.business_id)
+where get_json_object(business.json,'$.name')="Starbucks"
+order by checkin_info.total_checkin desc
+limit 10
+
+<br><br>
+<h1>
+13]
+
+Query : CartelCoffeeLabBranches
+</h1><br>
+select get_json_object(business.json,'$.full_address') as address,checkin_info.total_checkin
+from business join checkin_info on (get_json_object(business.json,'$.business_id')=checkin_info.business_id)
+where get_json_object(business.json,'$.name')="Cartel Coffee Lab"
+order by checkin_info.total_checkin desc
+limit 10
+<br>
+<br>
+<h1>
+14]
+
+Query : Top 20 Coffe shops
+</h1><br>
+select get_json_object(business.json,'$.name') business_name ,max(checkin_info.total_checkin) as total_checkin
+from business join checkin_info 
+on(get_json_object(business.json,'$.business_id')=checkin_info.business_id)
+where array_contains(Array(get_json_object(business.json,'$.categories[1]'),
+                           get_json_object(business.json,'$.categories[0]'),
+                           get_json_object(business.json,'$.categories[2]'),
+                           get_json_object(business.json,'$.categories[3]')
+                           ),'Coffee & Tea')=true
+and array_contains(Array(get_json_object(business.json,'$.categories[1]'),
+                         get_json_object(business.json,'$.categories[0]'),
+                         get_json_object(business.json,'$.categories[2]'),
+                         get_json_object(business.json,'$.categories[3]')
+                        ),'Restaurants')=false   
+group by get_json_object(business.json,'$.name')
+order by total_checkin desc
+limit 20
+<br>
+<br>
+<h1>
+15]
+
+Query : Average Rating for each business
+</h1><br>
+select avg(get_json_object(reviews.json,'$.stars')) as average_rating,
+get_json_object(reviews.json,'$.business_id')  as businessId 
+from reviews
+group by get_json_object(reviews.json,'$.business_id')
+order by average_rating desc
+
+
+
+
+</p>
+								
+							</div>
+	</div>
+
+	</section>
+ </div>
+	</div>
+
+		<div class="main zerogrid">
+
+ <footer>
+				<a>Powered by </a><p><p/> <a href="http://www.yelp.com/" target="_blank"><img src="./images/yelp.jpg" width="100" height="100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://www.cloudera.com/content/cloudera/en/home.html" target="_blank"><img src="./images/cloudera.jpg" width="90" height="50"></a>
+			</a><br>
+				
+			</footer>
+<!-- footer end -->
+		</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<script>
+	$(document).ready(function() {
+		tabs.init();
+	})
+</script>
+</body>
+</html>

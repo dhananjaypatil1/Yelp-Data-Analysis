@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link REL="SHORTCUT ICON" HREF="./images/toplogo.png">
+<title>Coffee Shop</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_700.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+  <!--[if lt IE 9]>
+  	<script type="text/javascript" src="js/html5.js"></script>
+	<style type="text/css">
+		.bg{ behavior: url(js/PIE.htc); }
+	</style>
+  <![endif]-->
+	<!--[if lt IE 7]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0"  alt="" /></a>
+		</div>
+	<![endif]-->
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Coffee Shops', 'Total Check In'],
+          ['Lux',1917],
+			['CafÃ© Conmigo',1682],
+			['Starbucks',5588],
+			['Cartel Coffee Lab',953],
+			['Dutch Bros. Coffee',557],
+			['Lola Coffee',556],
+			['Giant Coffee',552],
+			['The Coffee Shop',542],
+			['Hava Java',526],
+			['Copper Star Coffee',492],
+			['Tryst Cafe',479],
+			['The Coffee Bean & Tea Leaf',419],
+			['Others', 1058]
+        ]);
+
+        var options = {
+          title: 'Coffee Shops Buisness Share',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+  
+</head>
+
+<body id="page2">
+	<div class="body1">
+	<div class="body2">
+	<div class="body5">
+		<div class="main zerogrid">
+<!-- header -->
+			<header>
+				<div class="wrapper rơw">
+				<h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+				<nav>
+					<ul id="menu">
+						<li id="nav1"><a href="index.html">Home<span>Welcome!</span></a></li>
+						<li id="nav2" class="active"><a href="News.html">Queries<span>NoSql</span></a></li>
+						<li id="nav3"><a href="Services.html">About<span>Us</span></a></li>
+						<li id="nav4"><a href="Products.html">Powered<span>by</span></a></li>
+					</ul>
+				</nav>
+				</div>
+			</header>
+<!-- header end-->
+		</div>
+	</div>
+	</div>
+	</div>
+	<div class="body3">
+		<div class="main zerogrid">
+<!-- google content -->
+<p class="pad_bot1">       <br><br>    CASE STUDY<br> TOP 12 COFFEE SHOPS<br> Intended Audience : Survey Companies<br> 1. There can be many metrics like number of checkins, average rating, number of reviews on which popularity of a business can be determined. We have used checkins as a measure of popularity of a business. The reason underlie in the fact that people checkin when they feel that the place they are visiting is amazing or of special importance to them. This fact makes checkin a top candidate to determine the popularity. The other two metrics i.e. number of reviews and average ratings have not been considered because Yelp already uses those metrics to determine popularity.<br> 2. With checkins as a metric for determining popularity we have found out top 10 coffee shops in the greater Pheonix Metropolitan area. </p>
+ <div id="piechart" style="width: 900px; height: 500px;"></div>
+ 
+ </div>
+	</div>
+
+		<div class="main zerogrid">
+
+ <footer>
+				<a>Powered by </a><p><p/> <a href="http://www.yelp.com/" target="_blank"><img src="./images/yelp.jpg" width="100" height="100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://www.cloudera.com/content/cloudera/en/home.html" target="_blank"><img src="./images/cloudera.jpg" width="90" height="50"></a>
+			</a><br>
+				
+			</footer>
+<!-- footer end -->
+		</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<script>
+	$(document).ready(function() {
+		tabs.init();
+	})
+</script>
+</body>
+</html>

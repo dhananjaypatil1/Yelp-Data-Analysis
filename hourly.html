@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link REL="SHORTCUT ICON" HREF="./images/toplogo.png">
+<title>Sample</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_700.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script type="text/javascript"
+        src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1',
+                                                                 'packages':['corechart']}]}"></script>
+<script>
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'x');
+    data.addColumn('number', 'values');
+    data.addColumn({id:'i0', type:'number', role:'interval'});
+    data.addColumn({id:'i1', type:'number', role:'interval'});
+    data.addColumn({id:'i2', type:'number', role:'interval'});
+    data.addColumn({id:'i2', type:'number', role:'interval'});
+    data.addColumn({id:'i2', type:'number', role:'interval'});
+    data.addColumn({id:'i2', type:'number', role:'interval'});
+
+    data.addRows([
+        ['a', 100, 90, 110, 85, 96, 104, 120],
+        ['b', 120, 95, 130, 90, 113, 124, 140],
+        ['c', 130, 105, 140, 100, 117, 133, 139],
+        ['d', 90, 85, 95, 85, 88, 92, 95],
+        ['e', 70, 74, 63, 67, 69, 70, 72],
+        ['f', 30, 39, 22, 21, 28, 34, 40],
+        ['g', 80, 77, 83, 70, 77, 85, 90],
+        ['h', 100, 90, 110, 85, 95, 102, 110]]);
+
+    // The intervals data as narrow lines (useful for showing raw source
+    // data)
+    var options_lines = {
+        title: 'Line intervals, default',
+        curveType:'function',
+        lineWidth: 2,
+        intervals: { 'style':'line' }, // Use line intervals.
+        legend: 'none',
+    };
+
+    var chart_lines = new google.visualization.LineChart(document.getElementById('chart_lines'));
+    chart_lines.draw(data, options_lines);
+}
+</script>
+</head>
+
+<body id="page2">
+	<div class="body1">
+	<div class="body2">
+	<div class="body5">
+		<div class="main zerogrid">
+<!-- header -->
+			<header>
+				<div class="wrapper rơw">
+				<h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+				<nav>
+					<ul id="menu">
+						<li id="nav1"><a href="index.html">Home<span>Welcome!</span></a></li>
+						<li id="nav2" ><a href="queries.html">Queries<span>NoSql</span></a></li>
+						<li id="nav3"><a href="about.html">About<span>Us</span></a></li>
+						<li id="nav4"><a href="powered.html">Powered<span>by</span></a></li>
+					</ul>
+				</nav>
+				</div>
+			</header>
+<!-- header end-->
+		</div>
+	</div>
+	</div>
+	</div>
+	<div class="body3">
+		<div class="main zerogrid">
+<!-- google content -->
+<div id="chart_lines" style="width: 900px; height: 500px;"></div>
+ </div>
+	</div>
+
+		<div class="main zerogrid">
+
+ <footer>
+				<a>Powered by </a><p><p/> <a href="http://www.yelp.com/" target="_blank"><img src="./images/yelp.jpg" width="100" height="100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://www.cloudera.com/content/cloudera/en/home.html" target="_blank"><img src="./images/cloudera.jpg" width="90" height="50"></a>
+			</a><br>
+				
+			</footer>
+
+<!-- footer end -->
+		</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<script>
+	$(document).ready(function() {
+		tabs.init();
+	})
+</script>
+</body>
+</html>

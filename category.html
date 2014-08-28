@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link REL="SHORTCUT ICON" HREF="./images/toplogo.png">
+<title>Sample</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_700.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Rating', 'Count Of People'],
+          ['0-1',  2009],
+          ['1-2',  1440],
+          ['2-3',  4681],
+          ['3-4',  19627],
+          ['4-5',  16103]
+        ]);
+
+        var options = {
+          title: 'Reviewer Category',
+          hAxis: {title: 'Average Rating'},
+          vAxis: {title: 'Number Of People'}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body id="page2">
+	<div class="body1">
+	<div class="body2">
+	<div class="body5">
+		<div class="main zerogrid">
+<!-- header -->
+			<header>
+				<div class="wrapper rơw">
+				<h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+				<nav>
+					<ul id="menu">
+						<li id="nav1"><a href="index.html">Home<span>Welcome!</span></a></li>
+						<li id="nav2" ><a href="queries.html">Queries<span>NoSql</span></a></li>
+						<li id="nav3"><a href="about.html">About<span>Us</span></a></li>
+						<li id="nav4"><a href="powered.html">Powered<span>by</span></a></li>
+					</ul>
+				</nav>
+				</div>
+			</header>
+<!-- header end-->
+		</div>
+	</div>
+	</div>
+	</div>
+	<div class="body3">
+		<div class="main zerogrid">
+<!-- google content -->
+<p><br><br> Case Study : Know Your Customer<br> Not all reviews of the customers need to be taken seriously by the business. Few people have tendency to give bad rating to all the businesses while few people have tendency to give very good ratings to all businesses. So when a person who generally gives good ratings to business, gives a bad rating to a business, then that review should be taken seriously. Similarly, when a person who generally gives bad ratings to businesses gives a good rating then that review should be considered as important. For analyzing which reviews are important and which are not it is vital to know nature of your customers.
+The following case study explains this-<br>
+ We categorized the users on the basis of the average ratings they give. The following graph shows the count of users in each category.
+</p>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<div>
+	<h1>
+	<li id="nav1"><a href="./review.html">NEXT GRAPH></a></li>
+</h1>
+	</div>
+ </div>
+	</div>
+
+		<div class="main zerogrid">
+
+ <footer>
+				<a>Powered by </a><p><p/> <a href="http://www.yelp.com/" target="_blank"><img src="./images/yelp.jpg" width="100" height="100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://www.cloudera.com/content/cloudera/en/home.html" target="_blank"><img src="./images/cloudera.jpg" width="90" height="50"></a>
+			</a><br>
+				
+			</footer>
+
+<!-- footer end -->
+		</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<script>
+	$(document).ready(function() {
+		tabs.init();
+	})
+</script>
+</body>
+</html>

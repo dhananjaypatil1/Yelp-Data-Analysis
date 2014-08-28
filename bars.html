@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link REL="SHORTCUT ICON" HREF="./images/toplogo.png">
+<title>Bars</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_700.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<!--google script -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Speakers (in millions)'],['The Lodge',4007],
+
+['Daily Dose',1637],
+['Patties',1577],
+['El Hefe',1540],
+['RnR',1534],
+['Cornish Pasty Company',1328],
+['The Vig',1286],
+['Casey Moores Oyster House',1258],
+['FEZ',1211],
+['5th and Wine',1176],
+['Switch Restaurant & Wine Bar',1106],
+['Four Peaks Brewing Co',3279],
+['American Junkie',1088],
+['Mabels On Main',1008],
+['Boulders On Broadway',985],
+['Dos Gringos',978],
+['La Bocca Urban Pizzeria + Wine Bar',976],
+['Giligins Bar',971],
+['The Hungry Monk',952],
+['Copper Blues',927],
+['Others', 879]
+
+        ]);
+
+        var options = {
+          title: 'Top Bars',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  
+                    0: {offset: 0.5},
+                    11: {offset: 0.4},
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body id="page2">
+	<div class="body1">
+	<div class="body2">
+	<div class="body5">
+		<div class="main zerogrid">
+<!-- header -->
+			<header>
+				<div class="wrapper rơw">
+				<h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+				<nav>
+					<ul id="menu">
+						<li id="nav1"><a href="index.html">Home<span>Welcome!</span></a></li>
+						<li id="nav2" ><a href="queries.html">Queries<span>NoSql</span></a></li>
+						<li id="nav3"><a href="about.html">About<span>Us</span></a></li>
+						<li id="nav4"><a href="powered.html">Powered<span>by</span></a></li>
+					</ul>
+				</nav>
+				</div>
+			</header>
+<!-- header end-->
+		</div>
+	</div>
+	</div>
+	</div>
+	<div class="body3">
+		<div class="main zerogrid">
+<!-- google content -->
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+ </div>
+	</div>
+
+		<div class="main zerogrid">
+
+ <footer>
+				<a>Powered by </a><p><p/> <a href="http://www.yelp.com/" target="_blank"><img src="./images/yelp.jpg" width="100" height="100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://www.cloudera.com/content/cloudera/en/home.html" target="_blank"><img src="./images/cloudera.jpg" width="90" height="50"></a>
+			</a><br>
+				
+			</footer>
+<!-- footer end -->
+		</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<script>
+	$(document).ready(function() {
+		tabs.init();
+	})
+</script>
+</body>
+</html>

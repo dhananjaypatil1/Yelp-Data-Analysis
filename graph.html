@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link REL="SHORTCUT ICON" HREF="./images/toplogo.png">
+<title>Graphs</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
+<script type="text/javascript" src="js/Swis721_Cn_BT_700.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+ <style type="text/css">
+circle.node {
+  cursor: pointer;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+circle.node.directory {
+  stroke: #9ecae1;
+  stroke-width: 2px;
+}
+
+circle.node.collapsed {
+  stroke: #555;
+}
+
+.nodetext {
+  fill: #252929;
+  font-weight: bold;
+  text-shadow: 0 0 0.2em white;
+}
+
+line.link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
+}
+    </style>
+</head>
+
+<body id="page2">
+	<div class="body1">
+	<div class="body2">
+	<div class="body5">
+		<div class="main zerogrid">
+<!-- header -->
+			<header>
+				<div class="wrapper rơw">
+				<h1><a href="index.html" id="logo"><img src="images/logo.png" /></a></h1>
+				<nav>
+					<ul id="menu">
+						<li id="nav1"><a href="index.html">Home<span>Welcome!</span></a></li>
+						<li id="nav2" ><a href="queries.html">Queries<span>NoSql</span></a></li>
+						<li id="nav3"><a href="about.html">About<span>Us</span></a></li>
+						<li id="nav4"><a href="powered.html">Powered<span>by</span></a></li>
+					</ul>
+				</nav>
+				</div>
+			</header>
+<!-- header end-->
+		</div>
+	</div>
+	</div>
+	</div>
+	<div class="body3">
+		<div class="main zerogrid">
+<!-- google content -->
+<div class="content" style="display:none;" >
+	<form id="jsonInput">
+        <fieldset>
+          <textarea id="jsonData" style="display:none;">{
+  "name": "Industries",
+  "children": [
+    {
+      "name": "Restaurants",
+      "children": [
+        {
+          "name": "Burger King",
+          "children": [
+            {
+              "name": "3800 E Sky Harbor BlvdSte 4340Phoenix, AZ 85034",
+              "size": 103
+            },
+            {
+              "name": "524 E Wickenburg WayWickenburg, AZ 85390",
+              "size": 17
+            },
+            {
+              "name": "2019 S McClintock DrTempe, AZ 85282",
+              "size": 16
+            },
+            {
+              "name": "3400 E Sky Harbor BlvdPHX Gate A20Phoenix,AZ85073",
+              "size": 15
+            },
+            {
+              "name": "1220 W Elliot RdTempe, AZ 85284",
+              "size": 13
+            },
+            {
+              "name": "1970 W Baseline RdPhoenix, AZ 85041",
+              "size": 11
+            },
+            {
+              "name": "17015 N 7th StPhoenix, AZ 85022",
+              "size": 10
+            },
+            {
+              "name": "1990 W Ray RoadChandler, AZ 85224",
+              "size": 10
+            },
+            {
+              "name": "6820 E Superstition SpringsMesa, AZ 85209",
+              "size": 9
+            },
+            {
+              "name": "12601 W Bell RdSurprise, AZ 85374",
+              "size": 9
+            }
+          ]
+        },
+        {
+          "name": "MacDondalds",
+          "children": [
+            {
+              "name": "13933 N Litchfield RdSurprise, AZ 85374",
+              "size": 60
+            },
+            {
+              "name": "16547 WEST BELL ROADSurprise, AZ 85388",
+              "size": 33
+            },
+            {
+              "name": "13870 W McDowell RoadGoodyear, AZ 85338",
+              "size": 24
+            },
+            {
+              "name": "14553 W Grand AveSurprise, AZ 85374",
+              "size": 21
+            },
+            {
+              "name": "7138 E US Hwy 60Gold Canyon, AZ 85218",
+              "size": 10
+            },
+            {
+              "name": "10230 N 32nd StPhoenix, AZ 85028",
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Subway",
+          "children": [
+            {
+              "name": "7620 E Indian School RdScottsdale, AZ 85251",
+              "size": 146
+            },
+            {
+              "name": "3300 N Hayden RdSte BScottsdale, AZ 85251",
+              "size": 84
+            },
+            {
+              "name": "10101 E Bell RoadScottsdale, AZ 85260",
+              "size": 71
+            },
+            {
+              "name": "5020 N 35th AvePhoenix, AZ 85017",
+              "size": 48
+            },
+            {
+              "name": "35 W Combs RdQueen Creek, AZ 85240",
+              "size": 48
+            },
+            {
+              "name": "17019 W Greenway RdSte 113Surprise, AZ 85388",
+              "size": 44
+            },
+            {
+              "name": "7908 E Chaparral RdScottsdale, AZ 85251",
+              "size": 42
+            },
+            {
+              "name": "4811 N 16th StSte 105Phoenix, AZ 85016",
+              "size": 39
+            },
+            {
+              "name": "3210 W Bell RdSte 100Phoenix, AZ 85053",
+              "size": 37
+            },
+            {
+              "name": "144 N Central AvePhoenix, AZ 85004",
+              "size": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coffee Shops",
+      "children": [
+        {
+          "name": "Starbucks",
+          "children": [
+            {
+              "name": "4032 N Scottsdale RdScottsdale, AZ 85251",
+              "size": 1180
+            },
+            {
+              "name": "9301 E Shea BlvdScottsdale, AZ 85260",
+              "size": 893
+            },
+            {
+              "name": "Phoenix International Airport3800 W Sky Harbor Blvd, AZ 85034",
+              "size": 542
+            },
+            {
+              "name": "2824 N 44th StPhoenix, AZ 85008",
+              "size": 521
+            },
+            {
+              "name": "4010 E Greenway RdPhoenix, AZ 85032",
+              "size": 483
+            },
+            {
+              "name": "2832 N Power RdSte 101Mesa, AZ 85215",
+              "size": 362
+            },
+            {
+              "name": "420 S Mill AveTempe, AZ 85281",
+              "size": 303
+            },
+            {
+              "name": "8912 E. Pinnacle Peak RoadScottsdale, AZ 85255",
+              "size": 293
+            },
+            {
+              "name": "2885 W Ray RdChandler, AZ 85224",
+              "size": 270
+            },
+            {
+              "name": "2865 N Scottsdale RdScottsdale, AZ 85257",
+              "size": 258
+            }
+          ]
+        },
+        {
+          "name": "Cartel Coffee Lab",
+          "children": [
+            {
+              "name": "7124 E 5th AveScottsdale, AZ 85251",
+              "size": 1055
+            },
+            {
+              "name": "225 W University DrSte 101Tempe, AZ 85281",
+              "size": 953
+            },
+            {
+              "name": "1 N 1st StSte 100Phoenix, AZ 85004",
+              "size": 429
+            },
+            {
+              "name": "4225 Sky Harbor BlvdPhoenix, AZ 85034",
+              "size": 23
+            }
+          ]
+        },
+        {
+          "name": "Dutch Bros. Coffee",
+          "children": [
+            {
+              "name": "4 W Camelback RdPhoenix, AZ 85013",
+              "size": 557
+            },
+            {
+              "name": "2961 E Bell RdPhoenix, AZ 85032",
+              "size": 124
+            }
+          ]
+        }
+      ]
+    }
+  ]
+
+}</textarea>
+
+          </div>
+           <p>   <br><br>  Case Study: We took famous coffee shop ‘Starbucks’ and famous restaurant ‘’Subway’ for this analysis.<br>
+            Intended Audience : Survey Companies & Buisness Personel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The checkinflower generated for the branches of these two enterprises revealed few interesting points.
+<br>1) IntraEnterprise analysis: This gave us which starbuck branch was most popular and which Subway branch was more popular.
+<br>2) InterEnterprise analysis: It was also found that the number of checkins in Starbucks was way greater than total number of checkins in Subway. This shows that people consider Starbucks as a better brand than Subway .We tried to generalize our analysis even further by adding two more coffee shops namely Cartel Coffee Lab and Dutch Bros. Coffee and two more restaurants Burger King and McDonalds. The picture remained the same i.e. the amounts of checkins in both the coffee shops were way to more than the amount of checkins in the two restaurants.
+This clearly shows that restaurants like McDonalds, Burger King and Subway are no more a fascinating place to visit for people .On the other hand, people consider Starbucks as a fascinating place to visit.
+
+</p>
+        </fieldset>
+        </form>
+      <div class="container">
+       <div id="visualization"></div>
+    </div>
+
+    <script type="text/javascript" src="javascripts/d3/d3.js"></script>
+    <script type="text/javascript" src="javascripts/d3/d3.geom.js"></script>
+    <script type="text/javascript" src="javascripts/d3/d3.layout.js"></script>
+    <script type="text/javascript" src="javascripts/CodeFlower.js"></script>
+    <script type="text/javascript" src="javascripts/dataConverter.js"></script>
+
+    <script type="text/javascript">
+	 var jsond = JSON.parse(document.getElementById('jsonData').value);
+     var myflower = new CodeFlower("#visualization", 500, 500);
+     myflower.update(jsond); 
+    </script>
+
+ </div>
+	</div>
+
+		<div class="main zerogrid">
+
+ <footer>
+        <a>Powered by </a><p><p/> <a href="http://www.yelp.com/" target="_blank"><img src="./images/yelp.jpg" width="100" height="100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.cloudera.com/content/cloudera/en/home.html" target="_blank"><img src="./images/cloudera.jpg" width="90" height="50"></a>
+      </a><br>
+        
+      </footer>
+
+<!-- footer end -->
+		</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<script>
+	$(document).ready(function() {
+		tabs.init();
+	})
+</script>
+</body>
+</html>
